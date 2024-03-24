@@ -3,6 +3,6 @@ package com.starking.realmeet.repositories;
 /**
  * @author pedroRhamon
  */
-public interface AtendimentoRepository {
+public interface AtendimentoRepository implements JpaRepository<Long, Atendimento>{
 
 }
