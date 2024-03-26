@@ -1,6 +1,10 @@
 package com.starking.realmeet.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,5 +35,8 @@ public class Atendimento implements Serializable{
 	private String telefone;
 	
 	private String Cpf;
+	
+	@DateTimeFormat(iso = ISO.DATE_TIME)
+	private Date CreatedAt;
 
 }
