@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.starking.realmeet.model.Atendimento;
 import com.starking.realmeet.repositories.AtendimentoRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 /**
@@ -26,5 +27,9 @@ public class AtendimentoService {
 	private void findById(final Long id) {
 		this.repository.findById(id);
 	}
-
+	
+	@Transactional
+	private Atendimento save(Atendimento atendimento) {
+		return this.repository.save(atendimento);
+	}
 }
