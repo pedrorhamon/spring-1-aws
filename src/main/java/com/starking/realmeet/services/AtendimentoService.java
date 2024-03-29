@@ -22,5 +22,9 @@ public class AtendimentoService {
 	private Page<Atendimento> findAll(Pageable pageable) {
 		return this.repository.findAll(pageable);
 	}
+	
+	private void findById(final Long id) {
+		this.repository.findById(id);
+	}
 
 }
