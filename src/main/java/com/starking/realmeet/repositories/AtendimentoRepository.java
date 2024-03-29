@@ -7,6 +7,6 @@ import com.starking.realmeet.model.Atendimento;
 /**
  * @author pedroRhamon
  */
-public interface AtendimentoRepository extends JpaRepository<Long, Atendimento>{
+public interface AtendimentoRepository extends JpaRepository<Atendimento, Long>{
 
 }
