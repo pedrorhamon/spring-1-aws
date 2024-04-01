@@ -20,16 +20,16 @@ public class AtendimentoService {
 	
 	private final AtendimentoRepository repository;
 	
-	private Page<Atendimento> findAll(Pageable pageable) {
+	public Page<Atendimento> findAll(Pageable pageable) {
 		return this.repository.findAll(pageable);
 	}
 	
-	private void findById(final Long id) {
+	public void findById(final Long id) {
 		this.repository.findById(id);
 	}
 	
 	@Transactional
-	private Atendimento save(Atendimento atendimento) {
+	public Atendimento save(Atendimento atendimento) {
 		return this.repository.save(atendimento);
 	}
 }
