@@ -30,7 +30,7 @@ public class AtendimentoService {
 		this.repository.findById(id);
 	}
 
-	public Atendimento update(Atendimento atendimentoAtualizado, Long id) {
+	public Atendimento update(Atendimento atendimentoAtualizado, Long id) throws Exception {
 		Optional<Atendimento> atendimentoExistente = this.repository.findById(id);
 
 		if (atendimentoExistente.isPresent()) {
@@ -43,7 +43,7 @@ public class AtendimentoService {
 			
 			return this.repository.save(atendimento);
 		} else {
-			throw new AtendimentoException("Atendimento com o ID " + id + " não encontrado.");
+			throw new Exception("Atendimento com o ID " + id + " não encontrado.");
 		}
 	}
 
