@@ -2,6 +2,7 @@ package com.starking.realmeet.services;
 
 import java.util.Optional;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -56,16 +57,18 @@ public class AtendimentoService {
 		return this.repository.save(atendimento);
 	}
 
-	public void criarExcel() {
+	public void criarExcel(Atendimento atendimento) {
 		try {
 
 			Workbook workbook = new XSSFWorkbook();
-			
-			 Sheet sheet = workbook.createSheet("Planilha Teste");
-			 
-			 Row row = sheet.createRow(0);
-			 
-			 
+
+			Sheet sheet = workbook.createSheet("Planilha Teste");
+
+			Row row = sheet.createRow(0);
+
+			Cell cell1 = row.createCell(0);
+
+			cell1.setCellValue(atendimento.getNome());
 
 		} catch (Exception e) {
 			// TODO: handle exception
