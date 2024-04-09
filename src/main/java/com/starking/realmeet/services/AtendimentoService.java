@@ -51,4 +51,12 @@ public class AtendimentoService {
 	public Atendimento save(Atendimento atendimento) {
 		return this.repository.save(atendimento);
 	}
+	
+	public void criarExcel() {
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 }
