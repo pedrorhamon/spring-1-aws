@@ -2,6 +2,10 @@ package com.starking.realmeet.services;
 
 import java.util.Optional;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -40,7 +44,7 @@ public class AtendimentoService {
 			atendimento.setEmail(atendimentoAtualizado.getEmail());
 			atendimento.setCpf(atendimentoAtualizado.getCpf());
 			atendimento.setTelefone(atendimentoAtualizado.getTelefone());
-			
+
 			return this.repository.save(atendimento);
 		} else {
 			throw new Exception("Atendimento com o ID " + id + " não encontrado.");
@@ -51,10 +55,18 @@ public class AtendimentoService {
 	public Atendimento save(Atendimento atendimento) {
 		return this.repository.save(atendimento);
 	}
-	
+
 	public void criarExcel() {
 		try {
+
+			Workbook workbook = new XSSFWorkbook();
 			
+			 Sheet sheet = workbook.createSheet("Planilha Teste");
+			 
+			 Row row = sheet.createRow(0);
+			 
+			 
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
