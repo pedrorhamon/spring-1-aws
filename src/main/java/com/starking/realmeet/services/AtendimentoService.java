@@ -57,18 +57,22 @@ public class AtendimentoService {
 		return this.repository.save(atendimento);
 	}
 
-	public void criarExcel(Atendimento atendimento) {
+	public void criarExcel(String[][] dados, Atendimento atendimento) {
 		try {
 
 			Workbook workbook = new XSSFWorkbook();
 
 			Sheet sheet = workbook.createSheet("Planilha Teste");
 
-			Row row = sheet.createRow(0);
-
-			Cell cell1 = row.createCell(0);
-
-			cell1.setCellValue(atendimento.getNome());
+			int rowNum = 0;
+	        for (String[] linha : dados) {
+	            Row row = sheet.createRow(rowNum++);
+	            int colNum = 0;
+	            for (String campo : linha) {
+	                Cell cell = row.createCell(colNum++);
+	                cell.setCellValue(campo);
+	            }
+	        }
 
 		} catch (Exception e) {
 			// TODO: handle exception
