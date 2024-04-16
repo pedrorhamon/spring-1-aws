@@ -75,7 +75,7 @@ public class AtendimentoService {
 	        }
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.getMessage();
 		}
 	}
 }
