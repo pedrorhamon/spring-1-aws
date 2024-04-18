@@ -28,6 +28,7 @@ public class AtendimentoController {
 
 	private final AtendimentoService atendimentoService;
 
+	@GetMapping
 	public Page<Atendimento> findAll(Pageable pageable) {
 		return this.atendimentoService.findAll(pageable);
 	}
