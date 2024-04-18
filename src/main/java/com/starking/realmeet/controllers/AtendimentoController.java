@@ -33,7 +33,7 @@ public class AtendimentoController {
 		return this.atendimentoService.findAll(pageable);
 	}
 
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public void findById(@PathVariable("id") Long id) {
 		this.atendimentoService.findById(id);
 	}
@@ -54,5 +54,5 @@ public class AtendimentoController {
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 	    }
 	}
-
+	
 }
