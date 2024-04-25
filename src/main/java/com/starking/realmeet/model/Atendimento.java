@@ -40,5 +40,8 @@ public class Atendimento implements Serializable{
 	
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private Date CreatedAt;
+	
+	@DateTimeFormat(iso = ISO.DATE_TIME)
+	private Date UpdatedAt;
 
 }
