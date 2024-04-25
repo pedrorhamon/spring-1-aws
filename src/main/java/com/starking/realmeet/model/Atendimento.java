@@ -1,7 +1,7 @@
 package com.starking.realmeet.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -39,9 +39,9 @@ public class Atendimento implements Serializable{
 	private String Cpf;
 	
 	@DateTimeFormat(iso = ISO.DATE_TIME)
-	private Date CreatedAt;
+	private LocalDateTime CreatedAt;
 	
 	@DateTimeFormat(iso = ISO.DATE_TIME)
-	private Date UpdatedAt;
+	private LocalDateTime UpdatedAt;
 
 }
