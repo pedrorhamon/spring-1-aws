@@ -29,8 +29,10 @@ public class Atendimento implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(length = 20)
 	private String nome;
 	
+	@Column(length = 10)
 	private String email;
 	
 	private String telefone;
