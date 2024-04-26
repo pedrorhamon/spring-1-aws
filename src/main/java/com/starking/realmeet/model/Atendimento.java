@@ -13,8 +13,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author pedroRhamon
@@ -23,16 +25,19 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "atendimento")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Atendimento implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@EqualsAndHashCode.Include
 	private Long id;
 	
 	@Column(length = 20)
 	@NotNull
+	@NotBlank
 	private String nome;
 	
 	@Column(length = 10)
