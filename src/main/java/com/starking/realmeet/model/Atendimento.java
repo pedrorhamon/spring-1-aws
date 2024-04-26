@@ -12,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -30,9 +32,12 @@ public class Atendimento implements Serializable{
 	private Long id;
 	
 	@Column(length = 20)
+	@NotNull
 	private String nome;
 	
 	@Column(length = 10)
+	@Email
+	@NotNull
 	private String email;
 	
 	private String telefone;
