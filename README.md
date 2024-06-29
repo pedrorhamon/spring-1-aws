@@ -1,2 +1,2 @@
 # spring aws
-java 21, postgres14
+java 21, postgres14, redpand
