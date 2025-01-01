@@ -1,2 +1,2 @@
 # spring aws
-java 21, Springboot 
+java 21
