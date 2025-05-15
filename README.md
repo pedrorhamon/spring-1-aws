@@ -1,2 +1,2 @@
 # spring aws
-java 22
+java 21
